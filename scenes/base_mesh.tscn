@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://bib4yrq1t4ok8"]
+
+[ext_resource type="Shader" path="res://shader/grass.gdshader" id="1_7tlwh"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_w8r2l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r8fxc"]
+render_priority = 0
+shader = ExtResource("1_7tlwh")
+shader_parameter/density = 64.0
+shader_parameter/thickness = 1.0
+shader_parameter/waveSpeed = 2.0
+shader_parameter/waveIntensity = 2.0
+shader_parameter/waveDirection = Vector3(1, 0, 1)
+shader_parameter/shellExpBias = 1.25
+shader_parameter/shellLength = 0.05
+shader_parameter/displacement = Vector3(0, -0.1, 0)
+shader_parameter/displacementStr = 0.1
+shader_parameter/displacementCurvature = 0.5
+shader_parameter/attenuation = 2.0
+shader_parameter/thicknessCurve = 7.0
+shader_parameter/discolourationCurve = 4.0
+shader_parameter/AO_offset = 0.2
+shader_parameter/AO_scale = 0.0
+shader_parameter/minNoise = 0.2
+shader_parameter/maxNoise = 1.0
+shader_parameter/discolourationStrength = 0.05
+shader_parameter/shellIndex = 5
+shader_parameter/shellCount = 16
+shader_parameter/colour = Color(0.321569, 0.490196, 0.105882, 1)
+shader_parameter/discolour = Color(0.756863, 0.768627, 0.0901961, 1)
+
+[node name="BaseMesh" type="MeshInstance3D"]
+mesh = SubResource("SphereMesh_w8r2l")
+surface_material_override/0 = SubResource("ShaderMaterial_r8fxc")

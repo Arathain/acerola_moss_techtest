@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://7hm0b3y2n6kh"]
+
+[ext_resource type="Script" path="res://scenes/grass.gd" id="1_ie75w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hbbdo"]
+size = Vector3(2, 0.01, 2)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="grass" type="StaticBody3D" parent="."]
+script = ExtResource("1_ie75w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="grass"]
+shape = SubResource("BoxShape3D_hbbdo")
