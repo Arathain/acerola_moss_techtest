@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://brafvfkgcrxvv"]
+
+[ext_resource type="PackedScene" uid="uid://bxc5fiofbt4hx" path="res://scenes/pillar.tscn" id="1_tava3"]
+[ext_resource type="PackedScene" uid="uid://crdx24uhntcl6" path="res://scenes/moss_pillar.tscn" id="2_82x1o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0esfk"]
+size = Vector3(30, 0.01, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7u0gi"]
+size = Vector3(30, 0.01, 30)
+
+[node name="sceneProper" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_0esfk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_7u0gi")
+
+[node name="Pillar" parent="." instance=ExtResource("1_tava3")]
+transform = Transform3D(0.302202, -0.655647, -0.691954, 0.908172, 0.418596, 0, 0.289649, -0.628414, 0.721941, 3.9506, 0.0376878, -1.14901)
+
+[node name="pillar" parent="." instance=ExtResource("2_82x1o")]
+transform = Transform3D(0.326883, 0.619015, 0.71412, -0.898351, 0.438155, 0.0314108, -0.293451, -0.651798, 0.699318, -2.703, 3.792, -1.567)
+
+[node name="@Node3D@130984" type="Node3D" parent="pillar"]
